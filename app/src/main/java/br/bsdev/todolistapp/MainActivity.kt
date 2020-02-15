@@ -9,27 +9,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     fun calcular(){
-        var txt1 : String = txtNumber1.getText().toString();
-        var valor1 = txt1.toDouble()
-
-        var txt2 : String = txtNumber2.getText().toString();
-        var valor2 = txt2.toDouble()
-
-        var valorResultado = 0.0;
+        val valor1 = txtNumber1.getText().toString().toDouble()
+        val valor2 = txtNumber2.getText().toString().toDouble()
 
         val calcular = Calcular()
 
-        var id : Int = rdOpercao.checkedRadioButtonId
-        val radio : RadioButton = findViewById(id)
+        val radio : RadioButton = findViewById(rdOpercao.checkedRadioButtonId)
 
-        if(radio.text.equals("Dividir")) {
-            valorResultado = calcular.dividir(valor1, valor2)
-        } else if(radio.text.equals("Somar")) {
-            valorResultado = calcular.somar(valor1, valor2)
-        } else if(radio.text.equals("Multiplicar")){
-            valorResultado = calcular.multiplicar(valor1, valor2)
-        } else if(radio.text.equals("Subitrair")) {
-            valorResultado = calcular.diminuir(valor1, valor2)
+        var valorResultado = when (radio.text) {
+            "Somar" -> calcular.somar(valor1, valor2)
+            "Subitrair" -> calcular.subitrair(valor1, valor2)
+            "Dividir" -> calcular.dividir(valor1, valor2)
+            "Multiplicar" -> calcular.multiplicar(valor1, valor2)
+            else -> 0.0
         }
 
         vlResultado.setText(valorResultado.toString());

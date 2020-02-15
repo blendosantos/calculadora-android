@@ -6,7 +6,7 @@ class Calcular {
         return valor1 + valor2
     }
 
-    fun diminuir(valor1: Double, valor2 : Double): Double {
+    fun subitrair(valor1: Double, valor2 : Double): Double {
         return valor1 - valor2
     }
 
