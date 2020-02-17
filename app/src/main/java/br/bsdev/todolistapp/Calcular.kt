@@ -1,20 +1,21 @@
 package br.bsdev.todolistapp
 
-class Calcular {
+@Suppress("SpellCheckingInspection")
+class Calcular(private val valor1 : Double, private val valor2 : Double) {
 
-    fun somar(valor1: Double, valor2 : Double): Double {
+    fun somar(): Double {
         return valor1 + valor2
     }
 
-    fun subitrair(valor1: Double, valor2 : Double): Double {
+    fun subitrair(): Double {
         return valor1 - valor2
     }
 
-    fun multiplicar(valor1: Double, valor2 : Double): Double {
+    fun multiplicar(): Double {
         return valor1 * valor2
     }
 
-    fun dividir(valor1: Double, valor2 : Double): Double {
+    fun dividir(): Double {
         return valor1 / valor2
     }
 }
